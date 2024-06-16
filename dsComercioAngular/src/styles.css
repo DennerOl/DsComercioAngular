@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+:root {
+  --dsc-color-font-primary: #636363;
+  --dsc-color-bg-secondary: #ffe500;
+}
+
+.dsc-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
