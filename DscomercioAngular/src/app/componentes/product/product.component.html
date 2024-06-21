@@ -1,0 +1,13 @@
+<mat-card class="card-busca">
+  <img mat-card-image [src]="product?.imgUrl" alt="Product Image" />
+  <mat-card-content>
+    <ul>
+      <li>{{ product?.name }}</li>
+      <li>{{ product?.description }}</li>
+      <li>{{ product?.price }}</li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-flat-button color="primary">VER DETALHES</button>
+  </mat-card-actions>
+</mat-card>
