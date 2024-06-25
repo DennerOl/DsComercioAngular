@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ProductDTO } from './product';
+import { ProductDTO } from '../../pages/services/types/product';
 
 @Component({
   selector: 'app-product',

@@ -8,7 +8,7 @@ import { HeaderComponent } from './componentes/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './pages/home/home.component';
-import { CardProductComponent } from './componentes/card-product/card-product.component';
+import { CardProductComponent } from './pages/home/card-product/card-product.component';
 import { MatCardModule } from '@angular/material/card';
 import { ProductComponent } from './componentes/product/product.component';
 import { ContainerComponent } from './componentes/container/container.component';

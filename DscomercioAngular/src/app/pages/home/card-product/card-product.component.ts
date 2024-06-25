@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductDTO } from '../product/product';
-import { ProductServiceService } from '../product/product-service.service';
+import { ProductDTO } from '../../services/types/product';
+import { ProductsService } from 'src/app/pages/services/products.service';
 
 @Component({
   selector: 'app-card-product',
@@ -10,7 +10,7 @@ import { ProductServiceService } from '../product/product-service.service';
 export class CardProductComponent implements OnInit {
   listaProductDTO: ProductDTO[] = [];
 
-  constructor(private service: ProductServiceService) {}
+  constructor(private service: ProductsService) {}
 
   ngOnInit(): void {
     this.service.listar().subscribe((response) => {
@@ -23,6 +23,4 @@ export class CardProductComponent implements OnInit {
       }
     });
   }
-}
-{
 }
