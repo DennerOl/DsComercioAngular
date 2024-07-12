@@ -1,3 +1,19 @@
-<div class="card-wrapper">
-  <app-product *ngFor="let product of listaProductDTO" [product]="product" />
+<div class="buscar-products">
+  <input
+    type="search"
+    class="filtro"
+    placeholder="Buscar produtos"
+    autofocus
+    [(ngModel)]="filtro"
+    (keyup)="pesquisarProducts()"
+  />
 </div>
+
+<div class="card-wrapper">
+  <div *ngFor="let product of listaProductDTO">
+    <app-product [product]="product" />
+  </div>
+</div>
+
+<app-botao-carregar-mais (click)="carregarMaisProducts()">
+</app-botao-carregar-mais>

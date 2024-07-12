@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductDTO } from './types/product';
@@ -12,7 +12,22 @@ export class ProductsService {
 
   constructor(private http: HttpClient) {}
 
-  listar(): Observable<{ content: ProductDTO[] }> {
-    return this.http.get<{ content: ProductDTO[] }>(`${this.API}/products`);
+  listar(
+    pagina: number,
+    filtro: string
+  ): Observable<{ content: ProductDTO[] }> {
+    const itensPorPagina = 6;
+    let params = new HttpParams()
+      .set('page', pagina)
+      .set('size', itensPorPagina)
+      .set('sort', 'name');
+
+    if (filtro.trim().length > 2) {
+      params = params.set('name', filtro.trim());
+    }
+
+    const url = `${this.API}/products`;
+
+    return this.http.get<{ content: ProductDTO[] }>(url, { params: params });
   }
 }

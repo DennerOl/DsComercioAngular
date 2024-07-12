@@ -13,6 +13,9 @@ import { MatCardModule } from '@angular/material/card';
 import { ProductComponent } from './componentes/product/product.component';
 import { ContainerComponent } from './componentes/container/container.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BotaoCarregarMaisComponent } from './pages/home/card-product/botao-carregar-mais/botao-carregar-mais.component';
+import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     CardProductComponent,
     ProductComponent,
     ContainerComponent,
+    BotaoCarregarMaisComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatCardModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
