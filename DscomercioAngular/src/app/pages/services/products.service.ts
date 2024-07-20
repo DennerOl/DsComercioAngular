@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ProductDTO } from './types/product';
+import { ProductCategoryDTO, ProductDTO } from './types/product';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
@@ -29,5 +29,11 @@ export class ProductsService {
     const url = `${this.API}/products`;
 
     return this.http.get<{ content: ProductDTO[] }>(url, { params: params });
+  }
+  private apiUrl = 'http://localhost:8080/products';
+
+  buscarPorId(id: number): Observable<ProductCategoryDTO> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<ProductCategoryDTO>(url);
   }
 }

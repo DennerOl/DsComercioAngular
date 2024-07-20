@@ -21,30 +21,32 @@
 
 @media screen and (max-width: 375px) {
   .mat-toolbar {
-    /* Altera para layout de coluna em telas menores */
-    align-items: center; /* Alinha itens à esquerda em telas menores */
+    align-items: center;
   }
 
   .button-group {
-    flex-direction: column; /* Botões em coluna em telas menores */
-    align-items: flex-start; /* Alinha à esquerda em telas menores */
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   button {
-    margin: 2px 0; /* Ajusta a margem dos botões em telas menores */
-    font-size: 9px; /* Reduz o tamanho da fonte dos botões */
-    padding: 4px 10px; /* Ajusta o padding dos botões */
-    width: 100%; /* Faz os botões ocuparem a largura disponível */
-    max-width: auto; /* Define uma largura máxima para os botões */
+    margin: 2px 0;
+    font-size: 9px;
+    padding: 4px 10px;
+    width: 100%;
+    max-width: auto;
     font-size: var(--mdc-typography-button-font-size, 9px);
   }
 
   .dsTitle {
-    font-size: 1.2rem; /* Reduz o tamanho do título em telas menores */
-    margin-bottom: 5px; /* Adiciona espaço abaixo do título */
+    font-size: 1.2rem;
+    margin-bottom: 5px;
   }
 
   .app-header[_ngcontent-ng-c1109159638] button[_ngcontent-ng-c1109159638] {
     margin: 0 5px;
   }
+}
+a {
+  text-decoration: none;
 }

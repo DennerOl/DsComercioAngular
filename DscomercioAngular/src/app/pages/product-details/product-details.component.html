@@ -1,0 +1,33 @@
+<div class="card-container">
+  <mat-card class="card-busca2" *ngIf="product">
+    <img mat-card-image [src]="product.imgUrl" alt="Product Image" />
+
+    <mat-card-content>
+      <ul>
+        <li>{{ product.name }}</li>
+        <li>{{ product.description }}</li>
+        <li>{{ product.price }}</li>
+      </ul>
+      <h3>Categoria do produto</h3>
+      <div class="categories" *ngIf="product">
+        <div *ngFor="let category of product.categories">
+          <span>{{ category.name }}</span>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button color="primary">Comprar</button>
+      <button mat-flat-button color="primary" [routerLink]="['/']">
+        Cancelar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<!--
+<div *ngIf="product">
+  <div *ngFor="let category of product.categories">
+    <p>{{ category.name }}</p>
+  </div>
+</div>
+-->

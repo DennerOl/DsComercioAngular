@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BotaoCarregarMaisComponent } from './pages/home/card-product/botao-carregar-mais/botao-carregar-mais.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FooterComponent } from './componentes/footer/footer.component';
     ContainerComponent,
     BotaoCarregarMaisComponent,
     FooterComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
