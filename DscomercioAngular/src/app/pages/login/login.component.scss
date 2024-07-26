@@ -1,0 +1,60 @@
+.containerLogin {
+  background-color: #fff;
+  padding: 30px;
+
+  border-radius: 5px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  width: 350px;
+}
+
+h2 {
+  text-align: center;
+
+  margin-bottom: 20px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+
+  padding: 12px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 4px;
+
+  box-sizing: border-box;
+
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #7b1fa2;
+
+  color: white;
+
+  padding: 12px 20px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  width: 100%;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}

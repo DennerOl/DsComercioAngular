@@ -17,6 +17,9 @@ import { BotaoCarregarMaisComponent } from './pages/home/card-product/botao-carr
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { LoginComponent } from './pages/login/login.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
     BotaoCarregarMaisComponent,
     FooterComponent,
     ProductDetailsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,8 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
     MatCardModule,
     HttpClientModule,
     FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
