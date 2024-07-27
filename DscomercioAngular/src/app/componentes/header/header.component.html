@@ -3,11 +3,20 @@
     <a class="dsTitle" [routerLink]="['/']"> DsComercio</a>
 
     <span class="spacer"></span>
+
     <img
       src="../../../assets/imagens/imagemCarrinho.svg"
       alt="carrinhoCompras"
     />
-    <button mat-stroked-button [routerLink]="['/login']">LOGIN</button>
-    <button mat-flat-button>CADASTRE-SE</button>
+    <ng-container *ngIf="user$ | async as pessoaUsuaria; else login">
+      <a class="iconePerfil" routerLink="/perfil">
+        <img src="assets/icones/user.png" alt="Ícone da pessoa usuária" />
+      </a>
+      <button mat-stroked-button (click)="logout()">SAIR</button>
+    </ng-container>
+    <ng-template #login>
+      <button mat-stroked-button [routerLink]="['/login']">LOGIN</button>
+      <button mat-flat-button>CADASTRE-SE</button>
+    </ng-template>
   </mat-toolbar>
 </header>

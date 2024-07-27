@@ -8,6 +8,7 @@
     background-color: yellow;
     color: black;
     padding: 100;
+    --mat-toolbar-title-text-line-height: 0px;
   }
 
   .mat-mdc-outlined-button:not(:disabled) {
@@ -49,4 +50,10 @@
 }
 a {
   text-decoration: none;
+}
+
+.iconePerfil {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
 }
