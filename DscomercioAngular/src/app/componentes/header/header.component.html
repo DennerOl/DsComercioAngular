@@ -5,8 +5,10 @@
     <span class="spacer"></span>
 
     <img
+      [routerLink]="['/shoppingCart']"
       src="../../../assets/imagens/imagemCarrinho.svg"
       alt="carrinhoCompras"
+      style="cursor: pointer"
     />
     <ng-container *ngIf="user$ | async as pessoaUsuaria; else login">
       <a class="iconePerfil" routerLink="/perfil">

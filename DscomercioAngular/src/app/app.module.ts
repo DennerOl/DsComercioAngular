@@ -20,6 +20,8 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
 import { LoginComponent } from './pages/login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CartComponent } from './componentes/cart/cart.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     ProductDetailsComponent,
     LoginComponent,
+    CartComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,

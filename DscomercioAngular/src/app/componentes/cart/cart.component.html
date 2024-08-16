@@ -1,0 +1,52 @@
+<section id="cart-container-section">
+  <div *ngIf="cart.items.length === 0" class="dsc-empty-cart">
+    <h2 class="dsc-section-title">Seu Carrinho está Vázio</h2>
+  </div>
+
+  <div *ngIf="cart.items.length > 0">
+    <div
+      *ngFor="let item of cart.items"
+      class="dsc-cart-item-container dsc-line-bottom"
+    >
+      <div class="dsc-cart-item-left">
+        <img [src]="item.imgUrl" [alt]="item.name" />
+        <div class="dsc-cart-item-description">
+          <h3>{{ item.name }}</h3>
+          <div class="dsc-cart-item-quantity-container">
+            <div
+              (click)="handleDecreaseItem(item.productId)"
+              class="dsc-cart-item-quantity-btn"
+            >
+              -
+            </div>
+            <p>{{ item.quantity }}</p>
+            <div
+              (click)="handleIncreaseItem(item.productId)"
+              class="dsc-cart-item-quantity-btn"
+            >
+              +
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dsc-cart-item-right">R$ {{ item.subTotal.toFixed(2) }}</div>
+    </div>
+
+    <div class="dsc-cart-total-container">
+      <h3>R$ {{ cart.total.toFixed(2) }}</h3>
+    </div>
+  </div>
+
+  <div class="dsc-btn-page-container">
+    <button (click)="handlePlaceOrderClick()" class="dsc-btn dsc-btn-blue">
+      Finalizar pedido
+    </button>
+    <button class="dsc-btn dsc-btn-white" [routerLink]="['']">
+      Continuar comprando
+    </button>
+
+    <button (click)="handleClearClick()" class="dsc-btn dsc-btn-white">
+      Limpar carrinho
+    </button>
+  </div>
+</section>

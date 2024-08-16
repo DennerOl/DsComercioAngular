@@ -31,7 +31,7 @@ export class LoginComponent {
     this.authService.autenticar(email, senha).subscribe({
       next: (value) => {
         console.log('Login realizado com sucesso', value);
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/shoppingCart');
       },
       error: (err) => {
         console.log('Erro no login', err);

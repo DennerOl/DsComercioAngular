@@ -5,6 +5,9 @@ import {
 } from 'src/app/pages/services/types/product';
 import { ProductsService } from '../services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from '../services/cart/cart.service';
+import { CartCountService } from '../services/cart/cart-count.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-product-details',
@@ -18,7 +21,10 @@ export class ProductDetailsComponent {
   constructor(
     private productsService: ProductsService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private cartService: CartService,
+    private cartCountService: CartCountService,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
@@ -29,5 +35,25 @@ export class ProductDetailsComponent {
         this.product = product;
       });
     }
+  }
+
+  user$ = this.userService.retornarUser();
+
+  handleByClick(): void {
+    // Subscribe to the user$ Observable to check if the user is authenticated
+    this.user$.subscribe((user) => {
+      if (user) {
+        // Assuming `user.token` holds the JWT token
+        if (this.product) {
+          this.cartService.addProduct(this.product);
+          const cart = this.cartService.getCart();
+          this.cartCountService.setContextCartCount(cart.items.length); // Implementar método ou lógica para definir a contagem no contexto
+          this.router.navigate(['/shoppingCart']);
+        }
+      } else {
+        // Redirect to login page or show an appropriate message
+        this.router.navigate(['/login']);
+      }
+    });
   }
 }

@@ -16,7 +16,9 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-flat-button color="primary">Comprar</button>
+      <button mat-flat-button color="primary" (click)="handleByClick()">
+        Comprar
+      </button>
       <button mat-flat-button color="primary" [routerLink]="['/']">
         Cancelar
       </button>
