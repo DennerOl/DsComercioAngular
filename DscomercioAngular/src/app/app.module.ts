@@ -22,6 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CartComponent } from './componentes/cart/cart.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { ConfirmationCartComponent } from './pages/confirmation-cart/confirmation-cart.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
     LoginComponent,
     CartComponent,
     ShoppingCartComponent,
+    ConfirmationCartComponent,
   ],
   imports: [
     BrowserModule,

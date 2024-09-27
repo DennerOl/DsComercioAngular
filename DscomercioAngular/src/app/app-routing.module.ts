@@ -5,6 +5,7 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
 import { LoginComponent } from './pages/login/login.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { authGuard } from './pages/services/auth.guard';
+import { ConfirmationCartComponent } from './pages/confirmation-cart/confirmation-cart.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,11 @@ const routes: Routes = [
   {
     path: 'shoppingCart',
     component: ShoppingCartComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'confirmation/:orderId',
+    component: ConfirmationCartComponent,
     canActivate: [authGuard],
   },
 ];

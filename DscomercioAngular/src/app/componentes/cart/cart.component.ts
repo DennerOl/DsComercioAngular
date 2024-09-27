@@ -53,7 +53,7 @@ export class CartComponent {
   handlePlaceOrderClick(): void {
     this.orderService.placeOrderRequest(this.cart).subscribe((response) => {
       this.cartService.clearCart();
-      this.router.navigate([`/confirmation/${response.data.id}`]);
+      this.router.navigate([`/confirmation/${response.id}`]);
     });
   }
 }
