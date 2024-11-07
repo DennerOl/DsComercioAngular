@@ -36,7 +36,7 @@ export class CartComponent {
   }
 
   handleClearClick(): void {
-    this.cartService.clearCart();
+    this.cartService.deleteCart();
     this.loadCart();
   }
 
@@ -52,7 +52,7 @@ export class CartComponent {
 
   handlePlaceOrderClick(): void {
     this.orderService.placeOrderRequest(this.cart).subscribe((response) => {
-      this.cartService.clearCart();
+      this.cartService.deleteCart();
       this.router.navigate([`/confirmation/${response.id}`]);
     });
   }

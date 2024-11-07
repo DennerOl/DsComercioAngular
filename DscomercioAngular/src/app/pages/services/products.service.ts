@@ -26,14 +26,12 @@ export class ProductsService {
       params = params.set('name', filtro.trim());
     }
 
-    const url = `${this.API}/products`;
-
-    return this.http.get<{ content: ProductDTO[] }>(url, { params: params });
+    return this.http.get<{ content: ProductDTO[] }>(`${this.API}/products`, {
+      params,
+    });
   }
-  private apiUrl = 'http://localhost:8080/products';
 
   buscarPorId(id: number): Observable<ProductCategoryDTO> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.get<ProductCategoryDTO>(url);
+    return this.http.get<ProductCategoryDTO>(`${this.API}/products/${id}`);
   }
 }

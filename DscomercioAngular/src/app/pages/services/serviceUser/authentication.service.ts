@@ -11,7 +11,6 @@ import {
   CLIENT_SECRET,
   environment,
 } from 'src/environments/environment.development';
-import { CredentialsDTO } from './types/credentials&user';
 import { UserService } from './user.service';
 
 interface AuthResponse {
@@ -30,15 +29,9 @@ export class AuthenticationService {
     email: string,
     senha: string
   ): Observable<HttpResponse<AuthResponse>> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/x-www-form-urlencoded',
-      Authorization: 'Basic ' + btoa(CLIENT_ID + ':' + CLIENT_SECRET),
-    });
+    const headers = this.createHeaders();
+    const body = this.createBody(email, senha);
 
-    const body = new HttpParams()
-      .set('username', email)
-      .set('password', senha)
-      .set('grant_type', 'password');
     return this.http
       .post<AuthResponse>(`${this.apiUrl}/oauth2/token`, body.toString(), {
         headers,
@@ -50,5 +43,20 @@ export class AuthenticationService {
           this.userService.salvarToken(authToken);
         })
       );
+  }
+
+  private createHeaders(): HttpHeaders {
+    return new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Basic ${btoa(CLIENT_ID + ':' + CLIENT_SECRET)}`,
+    });
+  }
+
+  private createBody(email: string, senha: string): string {
+    return new HttpParams()
+      .set('username', email)
+      .set('password', senha)
+      .set('grant_type', 'password')
+      .toString();
   }
 }

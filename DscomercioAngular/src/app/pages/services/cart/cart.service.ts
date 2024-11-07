@@ -60,6 +60,10 @@ export class CartService {
     this.cartLocalStorage.clear();
   }
 
+  deleteCart(): void {
+    this.cartLocalStorage.excluir();
+  }
+
   increaseItem(productId: number): void {
     const cart = this.cartLocalStorage.get();
     const item = cart.items.find((x) => x.productId === productId);

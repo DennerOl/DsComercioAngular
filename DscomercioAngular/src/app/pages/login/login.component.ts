@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthenticationService } from '../services/authentication.service';
+import { AuthenticationService } from '../services/serviceUser/authentication.service';
 import { Router } from '@angular/router';
+import { CartService } from '../services/cart/cart.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -31,7 +33,8 @@ export class LoginComponent {
     this.authService.autenticar(email, senha).subscribe({
       next: (value) => {
         console.log('Login realizado com sucesso', value);
-        this.router.navigateByUrl('/shoppingCart');
+        this.router.navigateByUrl('');
+        this.cartService.deleteCart();
       },
       error: (err) => {
         console.log('Erro no login', err);

@@ -23,6 +23,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CartComponent } from './componentes/cart/cart.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { ConfirmationCartComponent } from './pages/confirmation-cart/confirmation-cart.component';
+import { FormCadastroUserComponent } from './componentes/form-cadastro-user/form-cadastro-user.component';
+import { CadastroUserComponent } from './pages/cadastro-user/cadastro-user.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -39,6 +44,8 @@ import { ConfirmationCartComponent } from './pages/confirmation-cart/confirmatio
     CartComponent,
     ShoppingCartComponent,
     ConfirmationCartComponent,
+    FormCadastroUserComponent,
+    CadastroUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +58,9 @@ import { ConfirmationCartComponent } from './pages/confirmation-cart/confirmatio
     FormsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -33,4 +33,8 @@ export class CartLocalStorageService {
   clear(): void {
     localStorage.setItem(Cart_key, '{"items":[]}');
   }
+
+  excluir() {
+    localStorage.removeItem(Cart_key);
+  }
 }

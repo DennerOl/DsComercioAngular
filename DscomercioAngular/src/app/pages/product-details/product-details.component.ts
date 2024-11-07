@@ -7,7 +7,7 @@ import { ProductsService } from '../services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../services/cart/cart.service';
 import { CartCountService } from '../services/cart/cart-count.service';
-import { UserService } from '../services/user.service';
+import { UserService } from '../services/serviceUser/user.service';
 
 @Component({
   selector: 'app-product-details',

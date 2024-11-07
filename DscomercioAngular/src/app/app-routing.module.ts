@@ -6,6 +6,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { authGuard } from './pages/services/auth.guard';
 import { ConfirmationCartComponent } from './pages/confirmation-cart/confirmation-cart.component';
+import { CadastroUserComponent } from './pages/cadastro-user/cadastro-user.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,11 @@ const routes: Routes = [
     path: 'confirmation/:orderId',
     component: ConfirmationCartComponent,
     canActivate: [authGuard],
+  },
+
+  {
+    path: 'cadastro',
+    component: CadastroUserComponent,
   },
 ];
 
