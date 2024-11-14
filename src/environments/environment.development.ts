@@ -1,6 +1,6 @@
 export const environment = {
   // API: 'http://localhost:8080',
-  API: 'http://dscomercio-production.up.railway.app',
+  API: 'https://dscomercio-production.up.railway.app',
   // dscomercio-production.up.railway.app
 };
 
