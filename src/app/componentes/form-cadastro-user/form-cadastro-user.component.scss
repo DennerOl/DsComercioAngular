@@ -26,3 +26,15 @@
     }
   }
 }
+
+@media (max-width: 667px) {
+  .cardUser {
+    .grid-container {
+      display: block;
+    }
+  }
+
+  .mat-mdc-form-field {
+    display: flex;
+  }
+}
