@@ -9,6 +9,8 @@
 .dsc-cart-total-container h3 {
   text-align: left;
   font-size: 16px;
+  color: green;
+  font-weight: 700;
 }
 .dsc-cart-item-container {
   padding: 0 20px;
@@ -39,24 +41,30 @@
 }
 .dsc-cart-item-description {
   background-color: #fff;
-  padding: 10px 0;
+  padding: 10px;
   display: flex;
-
+  align-items: center;
   justify-content: space-between;
   margin-left: 10px;
   width: 500px;
 }
 
-.dsc-cart-item-description h3 {
+.dsc-cart-item-description {
   font-size: 12px;
+  padding: 10px;
 }
 
 .dsc-cart-item-quantity-btn {
   cursor: pointer;
 }
 
-.dsc-cart-item-quantity-container p {
+.dsc-cart-item-quantity-container {
   margin: 0 5px;
+
+  p {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
 }
 
 .dsc-btn-page-container {
@@ -87,7 +95,7 @@
 normal da tela
 */
 
-@media (min-width: 576px) {
+@media (min-width: 667px) {
   .dsc-cart-item-container {
     flex-direction: row;
     justify-content: space-between;
@@ -98,5 +106,10 @@ normal da tela
 
   .dsc-cart-total-container h3 {
     text-align: right;
+  }
+
+  .dsc-btn-page-container {
+    display: flex;
+    justify-content: space-between;
   }
 }

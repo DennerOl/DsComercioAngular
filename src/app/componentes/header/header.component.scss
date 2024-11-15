@@ -20,7 +20,7 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 667px) {
   .mat-toolbar {
     align-items: center;
   }
@@ -34,8 +34,8 @@
     margin: 2px 0;
     font-size: 9px;
     padding: 4px 10px;
-    width: 100%;
-    max-width: auto;
+    // width: 100%;
+    //max-width: auto;
     font-size: var(--mdc-typography-button-font-size, 9px);
   }
 
