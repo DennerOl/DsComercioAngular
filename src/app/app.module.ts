@@ -28,6 +28,7 @@ import { CadastroUserComponent } from './pages/cadastro-user/cadastro-user.compo
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MatInputModule } from '@angular/material/input';
     ConfirmationCartComponent,
     FormCadastroUserComponent,
     CadastroUserComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +64,7 @@ import { MatInputModule } from '@angular/material/input';
     MatNativeDateModule,
     MatInputModule,
   ],
+  exports: [CadastroUserComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

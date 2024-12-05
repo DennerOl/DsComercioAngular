@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/pages/services/serviceUser/user.service';
 import { PessoaUsuaria } from 'src/app/pages/services/types/credentials&user';
 import { FormValidations } from '../form-validations';
+import { FormularioService } from 'src/app/pages/services/serviceUser/formulario.service';
 
 @Component({
   selector: 'app-form-cadastro-user',
@@ -13,16 +14,14 @@ import { FormValidations } from '../form-validations';
 export class FormCadastroUserComponent {
   cadastroForm!: FormGroup;
 
-  getCadastro(): FormGroup | null {
-    return this.cadastroForm;
-  }
-
   @Input() titulo: string = 'Crie sua conta';
+  @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private formularioService: FormularioService
   ) {}
 
   ngOnInit() {
@@ -49,16 +48,11 @@ export class FormCadastroUserComponent {
         ],
       ],
     });
+
+    this.formularioService.setCadastro(this.cadastroForm);
   }
 
-  cadastro() {
-    const formCadastro = this.getCadastro();
-
-    const novoCadastro = formCadastro?.getRawValue() as PessoaUsuaria;
-    console.log('Dados enviados para o backend:', novoCadastro);
-
-    this.userService.cadastraUser(novoCadastro).subscribe((response) => {
-      this.router.navigate([`/login`]);
-    });
+  executarAcao() {
+    this.acaoClique.emit();
   }
 }

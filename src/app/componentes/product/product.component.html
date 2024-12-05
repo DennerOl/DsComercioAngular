@@ -4,7 +4,9 @@
     <ul>
       <li>{{ product?.name }}</li>
       <li>{{ product?.description }}</li>
-      <li>{{ product?.price }}</li>
+      <li class="preco">
+        {{ product?.price | currency : "BRL" : "symbol" : "1.2-2" }}
+      </li>
     </ul>
   </mat-card-content>
   <mat-card-actions>

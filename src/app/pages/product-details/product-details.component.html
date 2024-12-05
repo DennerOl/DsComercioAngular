@@ -6,7 +6,9 @@
       <ul>
         <li>{{ product.name }}</li>
         <li>{{ product.description }}</li>
-        <li>{{ product.price }}</li>
+        <li class="preco">
+          {{ product.price | currency : "BRL" : "symbol" : "1.2-2" }}
+        </li>
       </ul>
       <h3>Categoria do produto</h3>
       <div class="categories" *ngIf="product">
@@ -25,11 +27,4 @@
     </mat-card-actions>
   </mat-card>
 </div>
-
-<!--
-<div *ngIf="product">
-  <div *ngFor="let category of product.categories">
-    <p>{{ category.name }}</p>
-  </div>
-</div>
--->
+<app-footer></app-footer>

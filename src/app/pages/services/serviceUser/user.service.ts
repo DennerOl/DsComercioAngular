@@ -50,6 +50,23 @@ export class UserService {
     });
   }
 
+  buscarCadastro(): Observable<PessoaUsuaria> {
+    const token = this.tokenService.retornarToken();
+    const headers = this.createAuthHeaders().set(
+      'Authorization',
+      `Bearer ${token}`
+    );
+
+    return this.http.get<PessoaUsuaria>(`${this.apiUrl}/users/me`, { headers });
+  }
+
+  editarCadastro(pessoaUsuaria: PessoaUsuaria): Observable<PessoaUsuaria> {
+    return this.http.patch<PessoaUsuaria>(
+      `${this.apiUrl}/users/perfil`,
+      pessoaUsuaria
+    );
+  }
+
   private createAuthHeaders(): HttpHeaders {
     const token = this.tokenService.retornarToken();
     return new HttpHeaders({
