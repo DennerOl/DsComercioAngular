@@ -4,19 +4,26 @@
 
     <span class="spacer"></span>
 
-    <img
-      [routerLink]="['/shoppingCart']"
-      src="../../../assets/imagens/imagemCarrinho.svg"
-      alt="carrinhoCompras"
-      style="cursor: pointer"
-    />
     <ng-container *ngIf="user$ | async as pessoaUsuaria; else login">
-      <a class="iconePerfil" [routerLink]="['/perfil']">
+      <a [routerLink]="['/perfil']">
         <img src="assets/icones/user.png" alt="Ícone da pessoa usuária" />
       </a>
       <button mat-stroked-button (click)="logout()">SAIR</button>
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/shoppingCart']">
+          Carrinho de Compras
+        </button>
+        <button mat-menu-item (click)="deleteUser()">Excluir Conta</button>
+      </mat-menu>
     </ng-container>
-    <ng-template #login>
+    <ng-template class="botoes" #login>
       <button mat-stroked-button [routerLink]="['/login']">LOGIN</button>
       <button mat-flat-button [routerLink]="['/cadastro']">CADASTRE-SE</button>
     </ng-template>

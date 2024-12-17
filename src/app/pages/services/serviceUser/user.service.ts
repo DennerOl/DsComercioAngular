@@ -67,6 +67,18 @@ export class UserService {
     );
   }
 
+  deleteUser(email: string): Observable<PessoaUsuaria> {
+    const token = this.tokenService.retornarToken();
+
+    const headers = this.createAuthHeaders().set(
+      'Authorization',
+      `Bearer ${token}`
+    );
+    return this.http.delete<PessoaUsuaria>(`${this.apiUrl}/users/${email}`, {
+      headers: headers,
+    });
+  }
+
   private createAuthHeaders(): HttpHeaders {
     const token = this.tokenService.retornarToken();
     return new HttpHeaders({

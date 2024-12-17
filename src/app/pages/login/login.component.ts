@@ -37,7 +37,7 @@ export class LoginComponent {
         this.cartService.deleteCart();
       },
       error: (err) => {
-        console.log('Erro no login', err);
+        alert('Usuário não Existe.');
       },
     });
   }

@@ -7,7 +7,7 @@
         <li>{{ product.name }}</li>
         <li>{{ product.description }}</li>
         <li class="preco">
-          {{ product.price | currency : "BRL" : "symbol" : "1.2-2" }}
+          {{ getFormattedPrice() }}
         </li>
       </ul>
       <h3>Categoria do produto</h3>
@@ -17,6 +17,7 @@
         </div>
       </div>
     </mat-card-content>
+
     <mat-card-actions>
       <button mat-flat-button color="primary" (click)="handleByClick()">
         Comprar

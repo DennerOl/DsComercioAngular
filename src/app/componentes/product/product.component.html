@@ -5,7 +5,7 @@
       <li>{{ product?.name }}</li>
       <li>{{ product?.description }}</li>
       <li class="preco">
-        {{ product?.price | currency : "BRL" : "symbol" : "1.2-2" }}
+        {{ getFormattedPrice() }}
       </li>
     </ul>
   </mat-card-content>

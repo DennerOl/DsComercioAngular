@@ -22,4 +22,22 @@ export class HeaderComponent {
     this.cartLocalStorageService.excluir();
     this.router.navigate(['/login']);
   }
+
+  deleteUser() {
+    this.userService.buscarCadastro().subscribe({
+      next: (user) => {
+        if (user && user.email) {
+          const userEmail = user.email;
+          console.log('Email do usuário:', userEmail);
+
+          this.userService.deleteUser(userEmail).subscribe({
+            next: () => {
+              this.logout();
+              alert('Sua conta foi excluída com sucesso.');
+            },
+          });
+        }
+      },
+    });
+  }
 }

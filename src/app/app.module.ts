@@ -29,6 +29,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatInputModule,
+    MatMenuModule,
+    MatIconModule,
   ],
   exports: [CadastroUserComponent],
   providers: [],

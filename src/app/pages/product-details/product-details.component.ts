@@ -56,4 +56,8 @@ export class ProductDetailsComponent {
       }
     });
   }
+
+  getFormattedPrice(): string {
+    return this.productsService.formatCurrency(this.product?.price);
+  }
 }

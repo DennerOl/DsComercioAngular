@@ -16,44 +16,36 @@
   }
 
   button {
-    margin: 0 16px;
-  }
-}
-
-@media screen and (max-width: 667px) {
-  .mat-toolbar {
-    align-items: center;
+    margin-left: 10px;
   }
 
-  .button-group {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  @media screen and (max-width: 667px) {
+    .mat-toolbar {
+      align-items: center;
+    }
 
-  button {
-    margin: 2px 0;
-    font-size: 9px;
-    padding: 4px 10px;
-    // width: 100%;
-    //max-width: auto;
-    font-size: var(--mdc-typography-button-font-size, 9px);
-  }
+    .button-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
-  .dsTitle {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
+    button {
+      margin: 5px;
+      font-size: 9px;
+      padding: 4px 10px;
+      font-size: var(--mdc-typography-button-font-size, 9px);
+    }
 
-  .app-header[_ngcontent-ng-c1109159638] button[_ngcontent-ng-c1109159638] {
-    margin: 0 5px;
-  }
-}
-a {
-  text-decoration: none;
-}
+    .dsTitle {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
 
-.iconePerfil {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 20px;
+    .app-header[_ngcontent-ng-c1109159638] button[_ngcontent-ng-c1109159638] {
+      margin: 0 5px;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
 }

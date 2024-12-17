@@ -34,4 +34,11 @@ export class ProductsService {
   buscarPorId(id: number): Observable<ProductCategoryDTO> {
     return this.http.get<ProductCategoryDTO>(`${this.API}/products/${id}`);
   }
+
+  formatCurrency(value: number | undefined): string {
+    if (value === undefined || value === null) {
+      return 'R$ 0,00';
+    }
+    return `R$ ${value.toFixed(2).replace('.', ',')}`;
+  }
 }
