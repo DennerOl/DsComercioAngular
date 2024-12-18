@@ -61,9 +61,15 @@ export class UserService {
   }
 
   editarCadastro(pessoaUsuaria: PessoaUsuaria): Observable<PessoaUsuaria> {
+    const token = this.tokenService.retornarToken();
+    const headers = this.createAuthHeaders().set(
+      'Authorization',
+      `Bearer ${token}`
+    );
     return this.http.patch<PessoaUsuaria>(
       `${this.apiUrl}/users/perfil`,
-      pessoaUsuaria
+      pessoaUsuaria,
+      { headers }
     );
   }
 

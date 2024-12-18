@@ -31,6 +31,7 @@ import { MatInputModule } from '@angular/material/input';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { OrderComponent } from './componentes/order/order.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { MatIconModule } from '@angular/material/icon';
     FormCadastroUserComponent,
     CadastroUserComponent,
     PerfilComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,

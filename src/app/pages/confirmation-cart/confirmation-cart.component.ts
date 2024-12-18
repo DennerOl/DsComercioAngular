@@ -8,22 +8,4 @@ import { OrderDTO } from '../services/types/order';
   templateUrl: './confirmation-cart.component.html',
   styleUrls: ['./confirmation-cart.component.scss'],
 })
-export class ConfirmationCartComponent {
-  order?: OrderDTO;
-
-  constructor(
-    private orderService: OrderService,
-    private route: ActivatedRoute
-  ) {}
-
-  ngOnInit(): void {
-    this.buscarPedido();
-  }
-
-  buscarPedido() {
-    const orderId = Number(this.route.snapshot.paramMap.get('orderId'));
-    this.orderService.findByIdRequest(orderId).subscribe((response) => {
-      this.order = response;
-    });
-  }
-}
+export class ConfirmationCartComponent {}
