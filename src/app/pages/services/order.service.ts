@@ -1,6 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, map, Observable, of, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { OrderDTO } from './types/order';
 import { TokenService } from './serviceUser/token.service';
@@ -29,6 +29,37 @@ export class OrderService {
       headers: headers,
       withCredentials: true,
     });
+  }
+
+  findAllRequest(
+    page: number = 0,
+    size: number = 5
+  ): Observable<{ content: OrderDTO[] }> {
+    const headers = this.createAuthHeaders();
+    const itensPorPagina = 3;
+    let params = new HttpParams()
+      .set('page', page.toString())
+      .set('size', size.toString());
+
+    return this.http
+      .get<{ content: OrderDTO[] }>(`${this.apiUrl}/orders`, {
+        headers: headers,
+        withCredentials: true,
+        params,
+      })
+      .pipe(
+        catchError((error) => {
+          // Se o erro for 404 (não encontrado), apenas suprimimos ele (não exibe no console)
+          if (error.status === 404) {
+            // Não faz nada, suprime o erro
+            return of({ content: [] }); // Retorna uma resposta vazia sem exibir no console
+          }
+
+          // Se o erro for diferente de 404, exibe no console
+          console.error('Erro ao buscar pedidos:', error);
+          return throwError(error); // Repassa o erro para que o código no componente possa lidar com ele
+        })
+      );
   }
 
   private createAuthHeaders(): HttpHeaders {

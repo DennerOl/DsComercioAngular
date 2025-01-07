@@ -1,10 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/pages/services/serviceUser/user.service';
-import { PessoaUsuaria } from 'src/app/pages/services/types/credentials&user';
-import { FormValidations } from '../form-validations';
 import { FormularioService } from 'src/app/pages/services/serviceUser/formulario.service';
+import { UserService } from 'src/app/pages/services/serviceUser/user.service';
+import { FormValidations } from '../form-validations';
 
 @Component({
   selector: 'app-form-cadastro-user',

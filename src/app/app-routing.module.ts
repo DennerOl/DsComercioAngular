@@ -8,6 +8,7 @@ import { authGuard } from './pages/services/auth.guard';
 import { ConfirmationCartComponent } from './pages/confirmation-cart/confirmation-cart.component';
 import { CadastroUserComponent } from './pages/cadastro-user/cadastro-user.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { OrdersUserComponent } from './pages/orders-user/orders-user.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,12 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: PerfilComponent,
+    canActivate: [authGuard],
+  },
+
+  {
+    path: 'pedidos',
+    component: OrdersUserComponent,
     canActivate: [authGuard],
   },
 ];

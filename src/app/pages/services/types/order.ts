@@ -1,3 +1,11 @@
+export class ClientDTO {
+  constructor(
+    public id: number,
+
+    public name: string
+  ) {}
+}
+
 export class OrderItemDTO {
   constructor(
     public productId: number,
@@ -15,6 +23,8 @@ export class OrderItemDTO {
 
 export class OrderDTO {
   id?: number;
+  status?: String;
+  client?: ClientDTO;
   items: OrderItemDTO[] = [];
 
   // Calcula o total de todo o carrinho

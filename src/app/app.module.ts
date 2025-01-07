@@ -32,6 +32,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { OrderComponent } from './componentes/order/order.component';
+import { OrdersUserComponent } from './pages/orders-user/orders-user.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { OrderComponent } from './componentes/order/order.component';
     CadastroUserComponent,
     PerfilComponent,
     OrderComponent,
+    OrdersUserComponent,
   ],
   imports: [
     BrowserModule,

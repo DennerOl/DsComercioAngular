@@ -1,0 +1,12 @@
+<app-container>
+  <div *ngIf="orders.length === 0" class="dsc-empty-cart">
+    <h2 class="dsc-section-title">Voce não possui pedidos</h2>
+  </div>
+
+  <div *ngIf="orders.length > 0">
+    <div *ngFor="let order of orders">
+      <!-- Passa cada pedido para o componente app-order -->
+      <app-order [order]="order"> </app-order>
+    </div>
+  </div>
+</app-container>
