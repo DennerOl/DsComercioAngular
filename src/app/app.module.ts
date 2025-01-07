@@ -8,12 +8,11 @@ import { HeaderComponent } from './componentes/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { HomeComponent } from './pages/home/home.component';
-import { CardProductComponent } from './pages/home/card-product/card-product.component';
+import { CardProductComponent } from './componentes/card-product/card-product.component';
 import { MatCardModule } from '@angular/material/card';
 import { ProductComponent } from './componentes/product/product.component';
 import { ContainerComponent } from './componentes/container/container.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BotaoCarregarMaisComponent } from './pages/home/card-product/botao-carregar-mais/botao-carregar-mais.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
@@ -33,6 +32,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { OrderComponent } from './componentes/order/order.component';
 import { OrdersUserComponent } from './pages/orders-user/orders-user.component';
+import { BotaoCarregarMaisComponent } from './componentes/botao-carregar-mais/botao-carregar-mais.component';
 
 @NgModule({
   declarations: [

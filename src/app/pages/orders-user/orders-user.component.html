@@ -1,4 +1,4 @@
-<app-container>
+<app-container class="conteudo">
   <div *ngIf="orders.length === 0" class="dsc-empty-cart">
     <h2 class="dsc-section-title">Voce não possui pedidos</h2>
   </div>
@@ -10,3 +10,5 @@
     </div>
   </div>
 </app-container>
+<app-botao-carregar-mais (click)="carregarMaisProducts()">
+</app-botao-carregar-mais>

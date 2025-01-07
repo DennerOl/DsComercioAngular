@@ -32,14 +32,14 @@ export class OrderService {
   }
 
   findAllRequest(
-    page: number = 0,
+    pagina: number,
     size: number = 5
   ): Observable<{ content: OrderDTO[] }> {
     const headers = this.createAuthHeaders();
-    const itensPorPagina = 3;
+    const itensPorPagina = 1;
     let params = new HttpParams()
-      .set('page', page.toString())
-      .set('size', size.toString());
+      .set('page', pagina)
+      .set('size', itensPorPagina);
 
     return this.http
       .get<{ content: OrderDTO[] }>(`${this.apiUrl}/orders`, {
